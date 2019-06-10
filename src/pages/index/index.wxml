@@ -1,0 +1,8 @@
+<view class="load"></view>
+<view class="spinner">
+  <view class="rect1"></view>
+  <view class="rect2"></view>
+  <view class="rect3"></view>
+  <view class="rect4"></view>
+  <view class="rect5"></view>
+</view>

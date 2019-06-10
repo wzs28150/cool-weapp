@@ -1,0 +1,35 @@
+@import 'var';
+
+image {
+	width  : 60px;
+	height : 60px;
+	display: block;
+	margin : 10vh auto 5vh;
+}
+
+.app-name {
+	text-align    : center;
+	border-bottom : 1px solid #eee;
+	padding-bottom: 5vh;
+	font-size     : 38rpx;
+}
+
+.info {
+	line-height: 2;
+	padding    : 5vh 0;
+
+	text {
+		color    : #666;
+		font-size: 32rpx;
+		display  : block;
+	}
+}
+
+button {
+	background-color: $blue;
+	color           : #fff;
+	border-radius   : 50px;
+	width           : 100%;
+	height          : $btn-height;
+	line-height     : $btn-height;
+}

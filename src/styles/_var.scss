@@ -1,0 +1,46 @@
+$red                    : #de3435;
+$blue                   : #007fff;
+$primary-color          : #2d8cf0;
+$info-color             : #2db7f5;
+$success-color          : #19be6b;
+$warning-color          : #ff9900;
+$error-color            : #ed3f14;
+$link-color             : #2D8cF0;
+$link-hover-color       : tint($link-color, 20%);
+$link-active-color      : shade($link-color, 5%);
+$selected-color         : fade($primary-color, 90%);
+$tooltip-color          : #fff;
+$subsidiary-color       : #80848f;
+$rate-star-color        : #f5a623;
+$title-color            : #1c2438;
+$text-color             : #495060;
+$background-color-base  : #f7f7f7; // base
+// Border color
+$border-color-base      : #dddee1; // outside
+$border-color-split     : #e9eaec; // inside
+//size
+$size-grid-icon         : 28px;
+$size-font-base         : 14px;
+$size-font-small        : 12px; // Button
+$btn-font-weight        : normal;
+$btn-padding-base       : 6px 15px;
+$btn-padding-large      : 6px 15px 7px 15px;
+$btn-padding-small      : 2px 7px;
+$btn-font-size          : 12px;
+$btn-font-size-large    : 14px;
+$btn-border-radius      : 4px;
+$btn-border-radius-small: 3px;
+$btn-group-border       : shade($primary-color, 5%);
+$btn-disable-color      : #bbbec4;
+$btn-disable-bg         : $background-color-base;
+$btn-disable-border     : $border-color-base;
+$btn-default-color      : $text-color;
+$btn-default-bg         : $background-color-base;
+$btn-default-border     : $border-color-base;
+$btn-primary-color      : #fff;
+$btn-primary-bg         : $primary-color;
+$btn-ghost-color        : $text-color;
+$btn-ghost-bg           : transparent;
+$btn-ghost-border       : $border-color-base;
+$btn-height             : 44px;
+$btn-line-height        : 44px;

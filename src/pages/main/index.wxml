@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  已登录
+</view>

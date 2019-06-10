@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <image  mode="aspectFit" src="../../../images/logo.jpg"></image>
+  <view class="app-name">{{appName}}</view>
+  <view class="info">
+    即将登录小程序,请确认是本人操作
+    <text  decode="{{true}}">•&ensp;&ensp;使用你的账号登录该应用</text>
+  </view>
+  <view class="userinfo">
+    <button wx:if="{{canIUse}}" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 确认登录 </button>
+  </view>
+</view>

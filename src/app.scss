@@ -1,0 +1,31 @@
+/**app.wxss**/
+@import 'var';
+
+.page {
+	min-height      : 100vh;
+	background-color: #f6f6f6;
+	font-size       : $size-font-base;
+}
+
+.container {
+	margin  : 0 15px;
+	overflow: hidden;
+}
+
+.inner-empty {
+	text-align: center;
+	color     : #999;
+}
+
+.inner-empty image {
+	width  : 30vw;
+	height : 30vw;
+	margin : 20vw auto 5vh;
+	display: block;
+}
+
+.text-hidden {
+	overflow     : hidden;
+	text-overflow: ellipsis;
+	white-space  : nowrap;
+}
