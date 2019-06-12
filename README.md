@@ -60,12 +60,9 @@
 
 [Changelog](/CHANGELOG.md)
 
-## 相关项目
+## 小程序登陆流程
+![avatar](https://api.hrbkcwl.com/flow.jpg)
 
-* [create-wxapp-page](https://github.com/cantonjs/create-wxapp-page)
-* [react-lib-boilerplate](https://github.com/cantonjs/react-lib-boilerplate)
-* [front-end-lib-boilerplate](https://github.com/cantonjs/front-end-lib-boilerplate)
-* [node-cli-boilerplate](https://github.com/cantonjs/node-cli-boilerplate)
 
 ## License
 
