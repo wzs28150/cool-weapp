@@ -83,7 +83,7 @@ App({
 	globalData: {
 		token: '',
 		userInfo: null,
-		api: 'https://api.hrbkcwl.com/hasong/api',
+		api: 'https://api.hrbkcwl.com/coolweapp/api',
 		appName: 'Cool小程序框架'
 	},
 });
