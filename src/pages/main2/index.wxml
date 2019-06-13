@@ -1,6 +1,6 @@
 <view class="page">
   <view class="container">
-    已登录 main
+    已登录 main2
   </view>
 </view>
 <navBar num="{{num}}" flag="{{flag}}"></navBar>

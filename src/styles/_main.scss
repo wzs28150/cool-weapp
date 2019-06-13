@@ -1,0 +1,31 @@
+.felx-box {
+	display              : -webkit-box;
+	-webkit-box-orient   : horizontal;
+	-webkit-box-direction: normal;
+	-webkit-box-pack     : justify;
+	-webkit-box-align    : center;
+	display              : flex;
+	flex-flow            : row nowrap;
+	align-items          : left;
+}
+/*分组子级*/
+
+.felx-item {
+	-webkit-box-flex: 1;
+	flex-basis      : 1;
+	flex-grow       : 1;
+	flex-shrink     : 1;
+	flex            : 1 1 1;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}

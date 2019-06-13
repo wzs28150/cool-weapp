@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/common/auth/index",
-    "pages/main/index"
+    "pages/main/index",
+    "pages/main0/index",
+    "pages/main1/index",
+    "pages/main2/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -20,7 +20,7 @@ $border-color-base      : #dddee1; // outside
 $border-color-split     : #e9eaec; // inside
 //size
 $size-grid-icon         : 28px;
-$size-font-base         : 14px;
+$size-font-base         : 36rpx;
 $size-font-small        : 12px; // Button
 $btn-font-weight        : normal;
 $btn-padding-base       : 6px 15px;
@@ -44,3 +44,4 @@ $btn-ghost-bg           : transparent;
 $btn-ghost-border       : $border-color-base;
 $btn-height             : 44px;
 $btn-line-height        : 44px;
+$tr4                    : all 2s, transform 2s;

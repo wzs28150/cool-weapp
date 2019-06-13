@@ -24,7 +24,7 @@ Page({
 		});
 
 		log();
-		
-		app.checkSession();
+
+		// app.checkSession();
 	},
 });

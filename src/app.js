@@ -4,7 +4,7 @@ import {
 import util from 'utils/util.js';
 App({
 	onLaunch() {
-
+		this.checkSession();
 	},
 	checkSession: function() {
 		const that = this;

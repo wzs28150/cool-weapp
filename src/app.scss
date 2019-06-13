@@ -1,10 +1,13 @@
 /**app.wxss**/
 @import 'var';
 
+page {
+	font-size: $size-font-base;
+}
+
 .page {
 	min-height      : 100vh;
 	background-color: #f6f6f6;
-	font-size       : $size-font-base;
 }
 
 .container {

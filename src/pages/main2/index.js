@@ -1,6 +1,4 @@
-import {
-	flow
-} from 'lodash';
+import { flow } from 'lodash';
 
 const delay = (t = 0) => new Promise((resolve) => setTimeout(resolve, t));
 
@@ -11,7 +9,7 @@ Page({
 	data: {
 		motto: 'Hello World',
 		userInfo: {},
-		num: 0,
+		num:3,
 		flag: false
 	},
 	// 事件处理函数
