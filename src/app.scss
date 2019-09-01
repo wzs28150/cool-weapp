@@ -1,13 +1,23 @@
 /**app.wxss**/
 @import 'var';
+@import 'main';
 
 page {
-	font-size: $size-font-base;
+	font-family     : "PingFangSC-Thin";
+	font-size       : $size-font-base;
+	background-color: #f2f2f2;
+	color: #333;
+}
+
+view[hidden] {
+	display: none !important;
 }
 
 .page {
 	min-height      : 100vh;
 	background-color: #f6f6f6;
+	position        : relative;
+	z-index         : 1;
 }
 
 .container {
@@ -15,9 +25,38 @@ page {
 	overflow: hidden;
 }
 
+.container-without-overflow {
+	margin: 0 15px;
+}
+
 .inner-empty {
 	text-align: center;
 	color     : #999;
+}
+
+::-webkit-scrollbar {
+	width : 0;
+	height: 0;
+	color : transparent;
+}
+
+.swiper-item {
+	&.on {
+		color   : $gold;
+		position: relative;
+
+		&::before {
+			content         : "";
+			display         : block;
+			position        : absolute;
+			bottom          : 0;
+			left            : 50%;
+			transform       : translateX(-50%);
+			background-color: $gold;
+			width           : 2em;
+			height          : 2px;
+		}
+	}
 }
 
 .inner-empty image {
@@ -31,4 +70,164 @@ page {
 	overflow     : hidden;
 	text-overflow: ellipsis;
 	white-space  : nowrap;
+}
+
+.checkbox .wx-checkbox-input {
+	border-radius: 32rpx;
+	/* 圆角 */
+	width: 32rpx;
+	/* 背景的宽 */
+	height: 32rpx;
+	/* 背景的高 */
+	border: 2px solid rgba(255, 129, 92, 1);
+}
+
+.checkbox .wx-checkbox-input-disabled {
+	border-radius: 32rpx;
+	/* 圆角 */
+	width: 32rpx;
+	/* 背景的宽 */
+	height: 32rpx;
+	/* 背景的高 */
+	background: #f3f3f3;
+	border    : 1px solid rgba(201, 201, 201, 1);
+}
+
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	background: $gold;
+}
+
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	width            : 32rpx;
+	height           : 32rpx;
+	line-height      : 32rpx;
+	text-align       : center;
+	font-size        : 24rpx;
+	color            : #fff;
+	background       : transparent;
+	transform        : translate(-50%, -50%) scale(1);
+	-webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.checkbox .wx-checkbox-input {
+	border-radius: 32rpx;
+	/* 圆角 */
+	width: 32rpx;
+	/* 背景的宽 */
+	height: 32rpx;
+	/* 背景的高 */
+	border: 1px solid $gold;
+}
+
+.checkbox .wx-checkbox-input-disabled {
+	border-radius: 32rpx;
+	/* 圆角 */
+	width: 32rpx;
+	/* 背景的宽 */
+	height: 32rpx;
+	/* 背景的高 */
+	background: #f3f3f3;
+	border    : 1px solid rgba(201, 201, 201, 1);
+}
+
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	background: $gold;
+}
+
+.checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	width            : 32rpx;
+	height           : 32rpx;
+	line-height      : 32rpx;
+	text-align       : center;
+	font-size        : 24rpx;
+	color            : #fff;
+	background       : transparent;
+	transform        : translate(-50%, -48%) scale(1);
+	-webkit-transform: translate(-50%, -48%) scale(1);
+}
+
+
+.radio .wx-radio-input {
+	border-radius: 32rpx;
+	/* 圆角 */
+	width: 32rpx;
+	/* 背景的宽 */
+	height: 32rpx;
+	/* 背景的高 */
+	border: 1px solid $gold;
+}
+
+
+.radio .wx-radio-input.wx-radio-input-checked {
+	overflow        : hidden;
+	border          : 1px solid $gold !important;
+	background-color: $gold !important;
+	position        : relative;
+}
+
+.radio .wx-radio-input.wx-radio-input-checked::before {
+	width            : 40rpx;
+	height           : 40rpx;
+	line-height      : 40rpx;
+	text-align       : center;
+	font-size        : 24rpx;
+	color            : #fff;
+	position         : absolute;
+	left             : 50%;
+	top              : 50%;
+	background       : $gold;
+	transform        : translate(-50%, -48%) scale(1);
+	-webkit-transform: translate(-50%, -48%) scale(1);
+}
+
+
+.flash-swiper-item {
+	&.on {
+		position: relative;
+
+		.bg {
+			background-color: $gold !important;
+
+			&::before {
+				visibility: visible !important;
+				opacity   : 1 !important;
+			}
+		}
+
+
+	}
+}
+
+.flashbar {
+	.countDownNum--f-gold {
+		color: #fff;
+	}
+
+	.countDownNum--f-999 {
+		background-image   : url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAYCAYAAAARfGZ1AAABx0lEQVRIiaWWMWgUQRSG/wsmQcEcIiFYCYJ3RUIQgo0QjVWwEBttAkqKFBKDELC2MeU1FgoSDgyInU0QUqTJgSj2yYFc7DyUoBCvScyR+2S9GTMMs7ezyQ+Pud353/eW3Zk3J8CPAvAOOATGAvN+LAK7wLw/5xtHga90tQNcjIDf5khv0+B3HdObCKj/UNsmdxMoJ/cL/ypIzyU9VlePJL3UkUYkXZVUkjQsqSOpKaku6ZOkP8ZZkLQi6b65vidTCfMaJpynuQy8BvZI13fgKTDg5C1Yd3JRA9aAomNIPk6nB9RXA7jm5N8CPoTeXyUH1Nd0r9XysEfiL+AF8DOjwKUQ/EJGUtX4nmX4vlhmn7MqKuqttpn9neEr2RVj4WclzWQkDZjxdIYv0RMXficiIY/GJZ238OsRiZixGFmkbOFDEeaWGRuR8JG+CJPVlBlfSapG+DsW/iPCfEXShvk95/WfkL652zVWn529sZyScwCcsaZ+oJ2jQM0psB6Y3/B36FIOuC3wANgKzN3w4aeA/ZwFQlpLa1w3TwhOmttgGjyJ2WOCm+aASW25NiaBeg7we+Bc1ukf6u8fzV+HlhfJsbjqHxD/A/QXMoM5ZTOt7YMAAAAASUVORK5CYII=');
+		background-size    : 24rpx;
+		background-position: left 32rpx;
+		background-repeat  : no-repeat;
+		padding-left       : 40rpx;
+		line-height        : 90rpx;
+	}
+
+	.countDownNum--h,
+	.countDownNum--m,
+	.countDownNum--s {
+		background   : #fff;
+		border-radius: 5px;
+		display      : inline-block;
+		width        : 44rpx;
+		height       : 44rpx;
+		text-align   : center;
+		line-height  : 44rpx;
+		color        : $gold;
+		margin       : 0 14rpx;
+
+	}
+
+	.countDownNum--s {
+		margin-right: 0;
+	}
 }

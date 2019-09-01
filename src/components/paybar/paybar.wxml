@@ -1,0 +1,9 @@
+<wxs src="../../wxs/price.wxs" module="Money" />
+<view class="payBar {{index==0?'on':''}}">
+  <view class="inner">
+    <view class="price">合计: <text class="f-gold f-bold">¥{{Money.format(sfk)}}/年</text>
+    </view>
+    <view class="des" hidden="{{index==0}}">已使用积分，已节省{{Money.format(dikou)}}元</view>
+  </view>
+  <view class="btn" bind:tap="gopay">{{text}}</view>
+</view>

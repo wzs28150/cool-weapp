@@ -1,0 +1,47 @@
+@import 'main';
+@import 'var';
+
+.teacherItem {
+	margin       : auto;
+	border-bottom: 1px solid #e0e0e0;
+	padding      : 30rpx;
+	position     : relative;
+
+	image {
+		width        : 120rpx;
+		height       : 120rpx;
+		border-radius: 50%;
+		position     : absolute;
+		left         : 30rpx;
+		top          : 30rpx;
+	}
+
+	.teacherItem-inner {
+		padding-left: calc(120rpx + 30rpx);
+		min-height  : 120rpx;
+
+		.name {
+			font-size: 34rpx;
+			margin-bottom: 10rpx;
+		}
+
+		.des {
+			font-size: 28rpx;
+			color    : #999;
+			line-height: 1.2em;
+		}
+	}
+
+}
+
+.box_8:hover {
+	background-color: #3780de;
+}
+
+.box_8:hover .text_8 {
+	color: #ffffff;
+}
+
+.box_8:hover .text_10 {
+	color: #ffffff;
+}

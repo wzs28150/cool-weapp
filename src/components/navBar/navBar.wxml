@@ -1,14 +1,3 @@
-<view class="load {{flag?'on':''}}"></view>
-<view class="spinner {{flag?'on':''}}">
-  <view class="rect1"></view>
-  <view class="rect2"></view>
-  <view class="rect3"></view>
-  <view class="rect4"></view>
-  <view class="rect5"></view>
-</view>
 <view class="navBar felx-box {{flag?'on':''}}">
-  <navigator url="/pages/main/index"  open-type="redirect" class="felx-item text-center {{num==0?'navigator-hover':''}}" hover-class="navigator-hover">首页</navigator>
-  <navigator url="/pages/main0/index" open-type="redirect" class="felx-item text-center {{num==1?'navigator-hover':''}}" hover-class="navigator-hover">商品</navigator>
-  <navigator url="/pages/main1/index" open-type="redirect" class="felx-item text-center {{num==2?'navigator-hover':''}}" hover-class="navigator-hover">购物车</navigator>
-  <navigator url="/pages/main2/index" open-type="redirect" class="felx-item text-center {{num==3?'navigator-hover':''}}" hover-class="navigator-hover">我的</navigator>
+  <navigator wx:for="{{list}}" url="{{item.url}}" wx:key="unique" open-type="redirect" class="felx-item text-center {{num==index?'navigator-hover':''}}" hover-class="navigator-hover" style="background-image:url({{num==index?item.ico_hover:item.ico}})">{{item.title}}</navigator>
 </view>

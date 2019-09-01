@@ -1,0 +1,35 @@
+@import 'main';
+@import 'var';
+
+.upload {
+    position: relative;
+
+    .progress-bar {
+        position        : absolute;
+        top             : 50%;
+        left            : 50%;
+        transform       : translate(-50%, -50%);
+        width           : 100%;
+        height          : 100%;
+        background-color: rgba(#000000, 0.4);
+    }
+
+    .progress {
+        position        : absolute;
+        top             : 50%;
+        left            : 50%;
+        transform       : translate(-50%, -50%);
+        width           : 80%;
+        height          : 5px;
+        background-color: #f6f6f6;
+        border-radius   : 50px;
+        box-shadow      : 0 0 5px #fff;
+        overflow        : hidden;
+
+        .run {
+            background-color: $gold;
+            height          : 5px;
+            translate       : $tr4;
+        }
+    }
+}

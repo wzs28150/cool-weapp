@@ -1,0 +1,49 @@
+@import 'main';
+@import 'var';
+
+.payBar {
+	position        : fixed;
+	bottom          : 0;
+	left            : 0;
+	width           : 100%;
+	background-color: #fff;
+	box-shadow      : 0 0 2px #ccc;
+	z-index         : 80;
+
+	.inner {
+		width  : calc(100% - 235rpx - 30px);
+		float  : left;
+		padding: 15rpx 15px;
+
+		.price {
+			font-size  : 30rpx;
+			line-height: 35rpx;
+
+		}
+
+		.des {
+			font-size  : 24rpx;
+			line-height: 35rpx;
+		}
+	}
+
+	.btn {
+		width           : 235rpx;
+		height          : 100rpx;
+		line-height     : 100rpx;
+		background-color: $gold;
+		color           : #fff;
+		text-align      : center;
+		float           : right;
+	}
+
+	&.on {
+		.inner {
+			.price {
+				font-size  : 32rpx;
+				line-height: 70rpx;
+
+			}
+		}
+	}
+}

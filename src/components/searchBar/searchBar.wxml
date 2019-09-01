@@ -1,0 +1,8 @@
+<view class="searchBar">
+  <view class="container">
+    <view class="searchBar-spinner">
+      <view class="searchBar-ico"   bind:tap="search"></view>
+      <input placeholder="请输入搜索的关键词" class="searchBar-input"  bindinput="bindKeyInput"/>
+    </view>
+  </view>
+</view>

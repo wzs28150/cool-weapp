@@ -1,0 +1,40 @@
+@import 'main';
+@import 'var';
+
+.scroll {
+	// margin-top   : 176rpx;
+	// margin-bottom: 120rpx;
+	// height       : calc(100vh - 176rpx - 120rpx);
+	position     : relative;
+	z-index      : 1;
+}
+
+.isLoadMoreLoading,
+.isRefreshLoading {
+	text-align : center;
+	height     : 3em;
+	line-height: 3em;
+	color      : #999;
+	// background-color: #f2f2f2;
+	.ico {
+		width         : 1em;
+		height        : 1em;
+		vertical-align: middle;
+		margin-right  : 10px;
+		transform     : translateY(-1px);
+	}
+}
+
+.inner-empty {
+	text-align: center;
+	color     : #999;
+	height    : 50%;
+	overflow  : hidden;
+}
+
+.inner-empty image {
+	width  : 30vw;
+	height : 30vw;
+	margin : 20vw auto 5vh;
+	display: block;
+}

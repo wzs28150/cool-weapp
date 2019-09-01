@@ -1,0 +1,8 @@
+<view class="load {{flag?'on':''}}  {{position}}" style="background-color:{{bgColor}}"></view>
+<view class="spinner {{flag?'on':''}}  {{position}}">
+  <view class="rect rect1"  style="background-color:{{loadColor}}"></view>
+  <view class="rect rect2"  style="background-color:{{loadColor}}"></view>
+  <view class="rect rect3"  style="background-color:{{loadColor}}"></view>
+  <view class="rect rect4"  style="background-color:{{loadColor}}"></view>
+  <view class="rect rect5"  style="background-color:{{loadColor}}"></view>
+</view>

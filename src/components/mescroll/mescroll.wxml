@@ -1,0 +1,14 @@
+<scroll-view scroll-y="scroll-y" class="scroll" bindscrolltoupper="upper" enable-back-to-top="true" bindscrolltolower="lower" scroll-with-animation="true" bindscroll="scroll" style="{{stylestr}}">
+  <view hidden="{{isRefreshLoading ? false : true}}" class="isRefreshLoading">
+    <image class="ico" mode="aspectFill" src="http://upload-images.jianshu.io/upload_images/5726812-95bd7570a25bd4ee.gif"></image>
+    下拉刷新中
+  </view>
+  <view class="inner-empty" wx:if="{{isEmpty==0}}">
+    <image src="../../images/mescroll-empty.png" mode="aspectFill"></image>
+  </view>
+  <slot name="inner" wx:else="wx:else"></slot>
+  <view hidden="{{isLoadMoreLoading ? false : true}}" class="isLoadMoreLoading">
+    <image class="ico" mode="aspectFill" src="http://upload-images.jianshu.io/upload_images/5726812-95bd7570a25bd4ee.gif"></image>
+    上拉加载中
+  </view>
+</scroll-view>

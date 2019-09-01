@@ -1,0 +1,107 @@
+@import 'main';
+@import 'var';
+
+.item {
+	// box-shadow   : 0 0 10px #ccc;
+	border-radius   : 10px;
+	overflow        : hidden;
+	padding         : 0 15px;
+
+	.top {
+		overflow     : hidden;
+		line-height  : 78rpx;
+		border-bottom: 1px solid #f2f2f2;
+	}
+
+	.pro {
+		padding: 30rpx 0;
+
+		.inner {
+			height      : 160rpx;
+			position    : relative;
+			padding-left: 190rpx;
+
+			.thumb {
+				width        : 160rpx;
+				height       : 160rpx;
+				border-radius: 10px;
+				overflow     : hidden;
+				position     : absolute;
+				left         : 0;
+				top          : 0;
+
+				.pic {
+					width : 160rpx;
+					height: 160rpx;
+				}
+			}
+
+			.title {
+				line-height: 32rpx;
+				padding    : 15rpx 0;
+				height     : 64rpx;
+				overflow   : hidden;
+			}
+
+			.num {
+				margin-top : 25rpx;
+				line-height: 24rpx;
+				overflow   : hidden;
+
+				.fr {
+					vertical-align: text-bottom;
+				}
+			}
+
+		}
+
+		.price {
+			height        : 34rpx;
+			line-height   : 34rpx;
+			margin-top    : 20rpx;
+			border-bottom : 1px solid #f2f2f2;
+			padding-bottom: 30rpx;
+
+			.fl {
+				line-height: 1em;
+				margin-top : 8rpx;
+			}
+		}
+
+
+	}
+
+	.btn {
+		text-align: right;
+		padding   : 30rpx 0;
+		border-top: 1px solid #f2f2f2;
+
+		.time {
+			display    : inline-block;
+			font-size  : 26rpx;
+			line-height: 48rpx;
+			float: left;
+		}
+
+		.button {
+			min-width    : 4em;
+			display      : inline-block;
+			font-size    : 26rpx;
+			line-height  : 48rpx;
+			border-radius: 48rpx;
+			overflow     : hidden;
+			background   : none;
+			margin-left  : 25rpx;
+
+			&.f-666 {
+				color : #666;
+				border: 1rpx solid #666;
+			}
+
+			&.f-gold {
+				color : $gold;
+				border: 1rpx solid $gold;
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+<video src="{{src}}" title="{{title}}" enable-play-gesture="true" id="myVideo" object-fit="cover" bindfullscreenchange="fullscreen" controls="true"  autoplay="{{isPlay}}" class="{{isPlay?'show':'hide'}}" ></video>

@@ -1,4 +1,3 @@
-<view class="page">
-  
-</view>
-<navBar num="0"></navBar>
+<view class="page"></view>
+<!-- <navBar num="0"></navBar> -->
+<loading flag="{{flag}}"></loading>

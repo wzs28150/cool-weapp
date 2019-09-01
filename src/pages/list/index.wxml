@@ -1,6 +1,7 @@
 <view class="page">
   <view class="container">
-    已登录 main1
+    常用列表
   </view>
 </view>
 <navBar num="{{num}}" flag="{{flag}}"></navBar>
+<loading flag="{{flag}}"></loading>

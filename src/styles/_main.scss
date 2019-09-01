@@ -8,8 +8,8 @@
 	flex-flow            : row nowrap;
 	align-items          : left;
 }
-/*分组子级*/
 
+/*分组子级*/
 .felx-item {
 	-webkit-box-flex: 1;
 	flex-basis      : 1;
@@ -28,4 +28,89 @@
 
 .text-right {
 	text-align: right;
+}
+
+.text-hidden {
+	display           : -webkit-box !important;
+	/* autoprefixer   : off */
+	-webkit-box-orient: vertical;
+	/* autoprefixer   : on */
+	-webkit-line-clamp: 1;
+	overflow          : hidden;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.white {
+	background-color: #fff !important;
+}
+
+
+
+.f-gold {
+	color: #74275f;
+}
+
+.f-bold {
+	font-weight: 600;
+}
+
+.font22 {
+	font-size: 22rpx;
+}
+
+.font24 {
+	font-size: 24rpx;
+}
+
+.font26 {
+	font-size: 26rpx;
+}
+
+.font28 {
+	font-size: 28rpx;
+}
+
+.font30 {
+	font-size: 30rpx;
+}
+
+.font32 {
+	font-size: 32rpx;
+}
+
+.font34 {
+	font-size: 34rpx;
+}
+.wh-center {
+	display            : -webkit-box;
+	display            : -ms-flexbox;
+	display            : -webkit-flex;
+	display            : flex;
+	-webkit-box-pack   : center;
+	-ms-flex-pack      : center;
+	justify-content    : center;
+	-webkit-box-align  : center;
+	-ms-flex-align     : center;
+	-webkit-align-items: center;
+	align-items        : center;
+}
+
+/*垂直居中*/
+
+.h-center {
+	display            : -webkit-box;
+	display            : -ms-flexbox;
+	display            : -webkit-flex;
+	display            : flex;
+	-webkit-box-align  : center;
+	-ms-flex-align     : center;
+	-webkit-align-items: center;
+	align-items        : center;
 }

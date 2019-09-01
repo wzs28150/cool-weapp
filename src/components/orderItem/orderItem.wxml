@@ -1,0 +1,25 @@
+<view class="item white" >
+  <view class="top font28">
+    <view class="fl">订单编号：{{item.orderid}}</view>
+  </view>
+  <view class="pro">
+    <view class="inner">
+      <view class="thumb">
+        <image class="pic" lazy-load="true" mode="aspectFill" src="{{item.thumb}}"></image>
+      </view>
+      <view class="title font30">{{item.title}}</view>
+      <view class="num">
+        <view class="f-gold fl font32 f-bold">¥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <view class="time">到期时间：2019-12-10</view>
+    <block wx:if="{{item.state==0}}">
+      <button class="f-gold button" bind:tap="goToInfo">开始学习</button>
+    </block>
+    <block wx:elif="{{item.state==1}}">
+      <button class="f-gold button" bind:tap="goToInfo">再次购买</button>
+    </block>
+  </view>
+</view>
