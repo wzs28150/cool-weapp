@@ -10,41 +10,50 @@ Component({
 		flag: {
 			type: Boolean,
 			value: false,
-			observer: function (newVal) {
-				console.log(newVal);
-			},
+			observer: function(newVal) {},
 		},
 	},
 	data: {
 		list: [],
 	},
 	methods: {
-		init: function () {
+		init: function() {
 			let that = this;
 			that.setData({
 				flag: false,
 			});
-			util.get(app.globalData.api + '/index/navbar').then((res) => {
-				let data = res.data;
+			if (app.globalData.navbar.length > 0) {
 				that.setData({
-					list: data.data,
+					list: app.globalData.navbar
 				});
-			}).catch(() => {});
+			} else {
+				util
+					.get(app.globalData.api + '/index/navbar')
+					.then((res) => {
+						let data = res.data;
+						app.globalData.navbar = data.data
+						that.setData({
+							list: data.data
+						});
+					})
+					.catch(() => {});
+			}
+
 		},
-		change: function (flag) {
+		change: function(flag) {
 			let that = this;
 			that.setData({
 				flaga: flag,
 			});
 		},
-		hide: function () {
+		hide: function() {
 			let that = this;
 			that.setData({
 				flag: false,
 			});
 		},
 	},
-	ready: function () {
+	ready: function() {
 		this.init();
 	},
 });

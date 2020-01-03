@@ -1,0 +1,8 @@
+<view class="upload" bind:tap="upload">
+	<image wx:if="{{url && !multiple}}" class="pic" lazy-load="true" mode="aspectFill" src="{{url}}"></image>
+	<view class="flex" wx:else>
+		<view class="icon"></view>
+		<view wx:if="{{title}}" class="title">{{title}}</view>
+	</view>
+	
+</view>

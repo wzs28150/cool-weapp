@@ -1,8 +1,0 @@
-<view class="upload" bind:tap="upload">
-  <slot name="inner"></slot>
-  <view class="progress-bar" wx:if="{{flag}}">
-    <view class="progress">
-      <view class="run" style="width:{{progress}}%"></view>
-    </view>
-  </view>
-</view>

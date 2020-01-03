@@ -1,7 +1,12 @@
 <view class="page">
-  <view class="container">
-    常用组件
-  </view>
+  <swiper class="swiper" duration="{{swiper.duration}}" current="{{swiper.current}}" indicator-dots="true"
+   indicator-active-color="#fff" bindanimationfinish="animationfinish" autoplay="{{false}}">
+  	<block wx:for="{{3}}" wx:key="unique">
+  		<swiper-item class="swiper-item" id="{{index}}">
+  			{{index}}
+  		</swiper-item>
+  	</block>
+  </swiper>
 </view>
 <navBar num="{{num}}" flag="{{flag}}"></navBar>
 <loading flag="{{flag}}"></loading>

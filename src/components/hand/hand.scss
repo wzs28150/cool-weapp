@@ -1,0 +1,152 @@
+.hand {
+	position        : fixed;
+	width           : 100vw;
+	height          : 100vh;
+	left            : 0;
+	top             : 0;
+	z-index         : 90;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size       : 28rpx;
+
+	.close {
+		position: absolute;
+		right   : 15px;
+		top     : 15px;
+		width   : 80rpx;
+		height  : 80rpx;
+	}
+
+	.tap {
+		width : 90rpx;
+		height: 131rpx;
+	}
+
+	.top {
+		position  : absolute;
+		top       : 15px;
+		left      : 50%;
+		transform : translateX(-50%);
+		color     : #fff;
+		text-align: center;
+
+		.arrow {
+			width : 22rpx;
+			height: 50rpx;
+		}
+
+		.tap {
+			animation: movetop 3s infinite;
+		}
+	}
+
+	.bottom {
+		position  : absolute;
+		bottom    : 15px;
+		left      : 50%;
+		transform : translateX(-50%);
+		color     : #fff;
+		text-align: center;
+
+		.arrow {
+			width : 22rpx;
+			height: 50rpx;
+		}
+
+		.tap {
+			animation: movebottom 3s infinite;
+		}
+	}
+
+	.left {
+		position  : absolute;
+		left      : 15px;
+		top       : 50%;
+		transform : translateY(-50%);
+		color     : #fff;
+		text-align: left;
+
+		.arrow {
+			width  : 50rpx;
+			height : 22rpx;
+			display: block;
+		}
+
+		.tap {
+			animation: moveleft 3s infinite;
+		}
+	}
+
+	.right {
+		position  : absolute;
+		right     : 15px;
+		top       : 50%;
+		transform : translateY(-50%);
+		color     : #fff;
+		text-align: right;
+
+		.arrow {
+			width : 50rpx;
+			height: 22rpx;
+		}
+
+		.tap {
+			animation: moveright 3s infinite;
+		}
+	}
+}
+
+@-webkit-keyframes moveleft {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(80rpx);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes moveright {
+	0% {
+		transform: translateX(0);
+	}
+
+	50% {
+		transform: translateX(-80rpx);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes movetop {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(80rpx);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes movebottom {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-80rpx);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}

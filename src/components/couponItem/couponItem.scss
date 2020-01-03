@@ -1,0 +1,100 @@
+.item{
+	background-color: #ffffff;
+	border-radius: 10rpx;
+	margin-top: 20rpx;
+	padding: 0 15px;
+	box-shadow: 0 0 15px rgba(#000,0.05);
+	position: relative;
+	overflow: hidden;
+	&:before {
+		content: "";
+		display: block;
+		width: 30rpx;
+		height: 30rpx;
+		background-color: rgba(#000,0.05);
+		border-radius: 100%;
+		position: absolute;
+		left: -15rpx;
+		top: 55%;
+	}
+	&:after {
+		content: "";
+		display: block;
+		width: 30rpx;
+		height: 30rpx;
+		background-color: rgba(#000,0.05);
+		border-radius: 100%;
+		position: absolute;
+		right: -15rpx;
+		top: 55%;
+	}
+	.flex {
+		display: flex;
+		&.h-center{
+			align-items: center;
+		}
+		&.w-between{
+			justify-content: space-between;
+		}
+	}
+	.shop-name {
+		font-size: 32rpx;
+		line-height: 70rpx;
+		font-weight: bold;
+	}
+	.middle {
+		padding-bottom: 20rpx;
+		border-bottom: 1px dashed #eee;
+		display: flex;
+		align-items: center;
+		.thumb {
+			width: 120rpx;
+			height: 120rpx;
+			border-radius: 10rpx;
+			overflow: hidden;
+			.pic {
+				width: 120rpx;
+				height: 120rpx;
+			}
+		}
+		.inner {
+			padding-left: 25rpx;
+			flex: 1;
+			.zhe {
+				.num {
+					font-size: 36rpx;
+					color: #00a6ff;
+					font-weight: bold;
+				}
+				.btn {
+					.btn-item {
+						font-size: 24rpx;
+						color: #fff;
+						margin-left: 30rpx;
+						line-height: 1em;
+						padding: 10rpx 16rpx;
+						border-radius: 5px;
+						&.hx {
+							background-image: linear-gradient(to right, #ee883f, #eb5c2e);
+						}
+						&.del{
+							background-color: #ccc;
+						}
+					}
+				}
+			}
+			.description {
+				color: #666;
+				font-size: 24rpx;
+				line-height: 1em;
+				padding: 24rpx 0 0;
+			}
+		}
+	}
+	.exp {
+		font-size: 22rpx;
+		color: #999999;
+		padding: 20rpx 0;
+		line-height: 1em;
+	}
+}

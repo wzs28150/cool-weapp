@@ -1,28 +1,31 @@
+import util from '../../utils/util.js';
+
+const app = getApp();
 Component({
 	properties: {
 		type: {
 			type: String,
 			value: '',
 		},
+		focus: {
+			type: Boolean,
+			value: '',
+		},
 	},
 	data: {
-		key: '',
+		list: [],
 	},
 	methods: {
-		init: function() {},
-		search: function() {
-			wx.navigateTo({
-				url: '/pages/search/list/index?key=' + this.data.key,
-			});
+		init: function () {
+			let that = this;
 		},
-		bindKeyInput: function(e) {
-			console.log(e.detail.value);
-			this.setData({
+		bindKeyInput: function (e) {
+			this.triggerEvent('KeyInput', {
 				key: e.detail.value,
 			});
 		},
 	},
-	ready: function() {
+	ready: function () {
 		this.init();
 	},
 });

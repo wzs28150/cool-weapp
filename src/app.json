@@ -1,7 +1,5 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/common/auth/index",
     "pages/main/index",
     "pages/list/index",
     "pages/me/style1/index/index"

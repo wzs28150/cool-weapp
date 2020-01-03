@@ -1,0 +1,12 @@
+.dologin {
+	background: none;
+	width: auto;
+	font-size: inherit;
+	color: inherit;
+	padding: 0;
+	margin: 0;
+	line-height: inherit;
+	&:after {
+		display: none;
+	}
+}

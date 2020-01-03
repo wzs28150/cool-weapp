@@ -6,28 +6,7 @@ Component({
 		flag: {
 			type: Boolean,
 			value: false,
-			observer: function(newVal) {
-				// console.log(newVal);
-			},
-		},
-		position: {
-			type: String,
-			value: 'fixed',
-			observer: function(newVal) {
-				// console.log(newVal);
-			},
-		},
-		bgColor: {
-			type: String,
-			value: '#fff',
-			observer: function(newVal) {
-				// console.log(newVal);
-			},
-		},
-		loadColor: {
-			type: String,
-			value: '#3783e3',
-			observer: function(newVal) {
+			observer: function (newVal, oldVal) {
 				// console.log(newVal);
 			},
 		},
@@ -36,26 +15,26 @@ Component({
 		list: [],
 	},
 	methods: {
-		init: function() {
+		init: function () {
 			let that = this;
 			that.setData({
 				flag: false,
 			});
 		},
-		change: function(flag) {
+		change: function (flag) {
 			let that = this;
 			that.setData({
 				flag: flag,
 			});
 		},
-		hide: function() {
+		hide: function () {
 			let that = this;
 			that.setData({
 				flag: false,
 			});
 		},
 	},
-	ready: function() {
-		this.init();
+	ready: function () {
+		// this.init();
 	},
 });

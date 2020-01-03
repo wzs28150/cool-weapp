@@ -1,0 +1,9 @@
+<view class="layer" hidden="{{flag}}">
+    <view class="layer-bg" bind:tap="close"></view>
+    <view class="layer-wapper">
+        <view class="close" bind:tap="close"></view>
+		<view class="inner">
+			<slot></slot>
+		</view>
+    </view>
+</view>

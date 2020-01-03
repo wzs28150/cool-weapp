@@ -1,0 +1,74 @@
+.item {
+	display: flex;
+	position: relative;
+	padding-top: 15px;
+	margin-bottom: 15px;
+	&:after {
+		content: '';
+		display: block;
+		background-color: #e1e1e3;
+		height: 1px;
+		width: 200%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(0.5);
+	}
+	.avatar {
+		width: 64rpx;
+		height: 64rpx;
+		border-radius: 100%;
+		margin-right: 15rpx;
+		overflow: hidden;
+		.pic {
+			width: 64rpx;
+			height: 64rpx;
+			border-radius: 100%;
+			overflow: hidden;
+		}
+	}
+	.inner {
+		flex: 1;
+		.name {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 64rpx;
+			line-height: 64rpx;
+			font-size: 28rpx;
+			text {
+				color: #999;
+				font-size: 24rpx;
+			}
+		}
+		.star {
+			height: 18rpx;
+			display: flex;
+			margin-bottom: 10rpx;
+			margin-top: 5rpx;
+			.pic {
+				width: 18rpx;
+				height: 18rpx;
+				margin-right: 5rpx;
+				display: block;
+			}
+		}
+		.content {
+			font-size: 28rpx;
+			line-height: 36rpx;
+			color: #666;
+			margin-top: 20rpx;
+		}
+		.photo {
+			display: flex;
+			margin-top: 20rpx;
+			.pic {
+				width: 110rpx;
+				height: 110rpx;
+				border-radius: 10rpx;
+				margin-right: 25rpx;
+				overflow: hidden;
+			}
+		}
+	}
+}

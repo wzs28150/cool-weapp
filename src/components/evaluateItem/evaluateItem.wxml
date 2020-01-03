@@ -1,0 +1,17 @@
+<view class="item">
+	<view class="avatar">
+		<bigImage class="pic"  src="{{item.avatarurl}}" list="{{[item.avatarurl]}}"></bigImage>
+	</view>
+	<view class="inner">
+		<view class="name">{{item.nickname}}<text>{{item.add_time}}</text></view>
+		<view class="star">
+			<!-- <image class="pic" wx:for="{{item.star}}" wx:key="unique" lazy-load="true" mode="aspectFill" src="{{starpic}}"></image> -->
+			<rating num="{{item.point}}" size="18" readonly="{{true}}"></rating>
+		</view>
+		<view class="content">{{item.content}}</view>
+		<view class="photo">
+			<!-- <image class="pic" bindtap='topic_preview' wx:for="{{item.photo}}" wx:key="unique" wx:for-item="photoItem" lazy-load="true" mode="aspectFill" src="{{photoItem}}" data-url="{{photoItem}}"></image> -->
+			<bigImage class="pic" wx:for="{{item.images}}" wx:key="unique" wx:for-item="photoItem" src="{{photoItem}}" list="{{item.images}}"></bigImage>
+		</view>
+	</view>
+</view>

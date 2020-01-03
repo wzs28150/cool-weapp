@@ -1,0 +1,26 @@
+<view class="item">
+	<view class="shop-name">
+		{{item.seller_name}}
+	</view>
+	<view class="middle">
+		<view class="thumb">
+			<image class="pic" lazy-load="true" mode="aspectFill" src="{{item.face_image}}"></image>
+		</view>
+		<view class="inner">
+			<view class="zhe flex w-between h-center">
+				<view class="num">{{item.discount}}折</view>
+				<view class="btn flex">
+					<view class="btn-item del" wx:if="{{item.is_use}}" data-id="{{item.coupon_id}}" >{{item.is_use?'已核销':'核销'}}</view>
+					<view class="btn-item hx" wx:else data-id="{{item.coupon_id}}" bindtap="hexiao">{{item.is_use?'已核销':'核销'}}</view>
+					<view class="btn-item del" data-id="{{item.id}}" bindtap="del">删除</view>
+				</view>
+			</view>
+			<view class="description">
+				{{item.coupon_instructions}}
+			</view>
+		</view>
+	</view>
+	<view class="exp">
+		有效期：{{item.start_time}}至{{item.end_time}}
+	</view>
+</view>

@@ -1,9 +1,0 @@
-<view class="teacherItem" id="{{item.fid}}" bindtap="se">
-  <image src="{{item.image}}"  mode="scaleToFill" class="img_1"></image>
-  <view class="teacherItem-inner">
-    <view class="name">{{item.name}}</view>
-    <view class="des">
-      <rich-text nodes="{{item.texta}}" bindtap="tap"></rich-text>
-    </view>
-  </view>
-</view>

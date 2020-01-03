@@ -1,0 +1,16 @@
+<view class="item" bindtap="goInfo">
+	<view class="thumb">
+		<image class="pic" lazy-load="true" mode="aspectFill" src="{{item.face_image}}"></image>
+	</view>
+	<view class="inner">
+		<view class="title text-hidden">{{item.seller_name}}</view>
+		<view class="star"><image class="pic" wx:for="{{item.score}}" wx:key="unique" lazy-load="true" mode="aspectFill" src="{{starpic}}"></image></view>
+		<view class="address">
+			{{item.seller_address}}
+		</view>
+		<view class="coupon">
+			<view class="zhe">{{item.discount}}折</view>
+			<view class="num">剩余:{{item.store_count}}张</view>
+		</view>
+	</view>
+</view>

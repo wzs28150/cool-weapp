@@ -1,0 +1,1 @@
+<image class="pic" bindtap='topic_preview' lazy-load="true" mode="aspectFill" src="{{src}}" data-url="{{src}}"></image>

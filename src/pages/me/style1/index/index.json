@@ -2,6 +2,7 @@
 {
   "usingComponents": {
   "navBar": "../../../../components/navBar/navBar",
-  "loading": "../../../../components/loading/loading"
+  "loading": "../../../../components/loading/loading",
+  "loginPannel": "../../../../components/loginPannel/loginPannel"
   }
 }
