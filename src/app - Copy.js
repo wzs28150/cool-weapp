@@ -6,7 +6,8 @@ App({
 		if (wx.getStorageSync("token")) {
 			this
 				.checkSession()
-				.then(function (res) {})
+				.then(function (res) {
+				})
 				.catch(function (err) {
 					console.log(err)
 					that.initLoginState();
@@ -21,37 +22,31 @@ App({
 		api: 'http://114.115.177.23:9090/mock/68/api',
 		appName: 'Cool小程序框架'
 	},
-	checkSession: function (url = "") {
+	checkSession: function (url = '') {
 		const that = this;
 		var promise = new Promise((resolve, reject) => {
 			wx.checkSession({
 				success: () => {
-					// session 未过期，并且在本生命周期一直有效
-					that.globalData.token = wx.getStorageSync("token");
+					that.globalData.token = wx.getStorageSync('token');
 					util
-						.get(that.globalData.api + "/myInfo")
-						.then(response => {
+						.get(that.globalData.api + '/myInfo')
+						.then((response) => {
 							let data = response.data;
 							if (data.statusCode == 1) {
 								let userInfo = data.user_info;
 								that.globalData.userInfo = userInfo;
-								if (this.userInfoReadyCallback) {
-									this.userInfoReadyCallback(userInfo)
-								}
-								resolve(data);
+								resolve(userInfo);
 							} else {
-								// that.initLoginState();
 								reject(data);
 							}
 						})
-						.catch(err => {
-							// that.initLoginState();
+						.catch((err) => {
 							reject(err);
 						});
 				},
-				fail: e => {
+				fail: (e) => {
 					reject(e);
-				}
+				},
 			});
 		});
 		return promise;

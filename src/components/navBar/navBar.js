@@ -9,9 +9,12 @@ Component({
 		},
 		flag: {
 			type: Boolean,
-			value: false,
-			observer: function(newVal) {},
+			value: false
 		},
+		swiper: {
+			type: Boolean,
+			value: false
+		}
 	},
 	data: {
 		list: [],
@@ -22,23 +25,18 @@ Component({
 			that.setData({
 				flag: false,
 			});
-			if (app.globalData.navbar.length > 0) {
+			if (app.globalData.navbar && app.globalData.navbar != '') {
 				that.setData({
 					list: app.globalData.navbar
 				});
 			} else {
-				util
-					.get(app.globalData.api + '/index/navbar')
-					.then((res) => {
-						let data = res.data;
-						app.globalData.navbar = data.data
-						that.setData({
-							list: data.data
-						});
-					})
-					.catch(() => {});
+				app.getNavReadyCallback = (res) => {
+					console.log(res)
+					that.setData({
+						list: res
+					});
+				};
 			}
-
 		},
 		change: function(flag) {
 			let that = this;
@@ -52,6 +50,18 @@ Component({
 				flag: false,
 			});
 		},
+		navTap: function(e) {
+			console.log(e.currentTarget.dataset.url)
+			if (this.data.swiper){
+				this.triggerEvent("swiperCallback", {
+				  id: e.currentTarget.dataset.id
+				});
+			}else{
+				wx.reLaunch({
+				  url: e.currentTarget.dataset.url
+				})
+			}
+		}
 	},
 	ready: function() {
 		this.init();

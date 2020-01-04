@@ -1,7 +1,8 @@
-
 {
   "usingComponents": {
-  "navBar": "../../components/navBar/navBar",
-  "loading": "../../components/loading/loading"
+    "navBar": "../../components/navBar/navBar",
+    "loading": "../../components/loading/loading",
+    "me": "../me/me",
+    "list": "../list/index"
   }
 }

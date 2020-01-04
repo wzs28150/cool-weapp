@@ -1,3 +1,3 @@
 <view class="navBar felx-box {{flag?'on':''}}">
-  <navigator wx:for="{{list}}" url="{{item.url}}" wx:key="unique" open-type="redirect" class="felx-item text-center {{num==index?'navigator-hover':''}}" hover-class="navigator-hover" style="background-image:url({{num==index?item.ico_hover:item.ico}})">{{item.title}}</navigator>
+  <view wx:for="{{list}}" data-url="{{item.url}}" data-id="{{index}}" wx:key="unique" open-type="redirect" class="felx-item text-center {{num==index?'navigator-hover':''}}" hover-class="navigator-hover" bind:tap="navTap" style="background-image:url({{num==index?item.ico_hover:item.ico}})">{{item.title}}</view>
 </view>

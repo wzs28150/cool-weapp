@@ -1,0 +1,11 @@
+<view class="item" bindtap="goInfo">
+  <view class="container">
+    <view class="thumb">
+      <image class="pic" lazy-load="true" mode="aspectFill" src="{{item.image}}"></image>
+    </view>
+    <view class="inner">
+      <view class="title text-hidden">{{item.title}}</view>
+      <view class="des">{{item.description}}</view>
+    </view>
+  </view>
+</view>

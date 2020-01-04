@@ -1,7 +1,10 @@
 <view class="page">
-  <view class="container">
-    常用列表
-  </view>
+    <mescroll class="scroll" page="{{page}}" bindupper="upper" bindlower="lower" isLoadMoreLoading="{{isLoadMoreLoading}}"
+     isRefreshLoading="{{isRefreshLoading}}" isEmpty="{{list.length}}" stylestr="{{stylestr}}">
+    	<view class="container-without-overflow" slot="inner">
+    		<view class="list">
+    			<newsPicItem class="newsPicItem" item="{{item}}" type="class" wx:for="{{list}}" id="{{item.id}}" wx:key="unique"></newsPicItem>
+    		</view>
+    	</view>
+    </mescroll>
 </view>
-<navBar num="{{num}}" flag="{{flag}}"></navBar>
-<loading flag="{{flag}}"></loading>

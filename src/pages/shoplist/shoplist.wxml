@@ -1,0 +1,10 @@
+<view class="page">
+    <mescroll class="scroll" page="{{page}}" bindupper="upper" bindlower="lower" scroll-with-animation="{{true}}" upper-threshold="{{0}}" isLoadMoreLoading="{{isLoadMoreLoading}}"
+     isRefreshLoading="{{isRefreshLoading}}" isEmpty="{{list.length}}" stylestr="{{stylestr}}">
+    	<view class="container-without-overflow" slot="inner">
+    		<view class="list" style="min-height: calc(100vh - 1rpx);">
+    			<shopItem class="shopItem" item="{{item}}" type="class" wx:for="{{list}}" id="{{item.id}}" wx:key="unique"></shopItem>
+    		</view>
+    	</view>
+    </mescroll>
+</view>

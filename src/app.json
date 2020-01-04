@@ -1,13 +1,13 @@
 {
-  "pages":[
-    "pages/main/index",
-    "pages/list/index",
-    "pages/me/style1/index/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Cool小程序框架",
-    "navigationBarTextStyle":"black"
-  }
+	"pages": [
+		"pages/main/index",
+		"pages/me1/style1/index/index",
+		"pages/shoplist/shoplist"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#00a6ff",
+		"navigationBarTitleText": "Cool小程序框架",
+		"navigationBarTextStyle": "white"
+	}
 }

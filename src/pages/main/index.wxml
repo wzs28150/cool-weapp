@@ -1,12 +1,22 @@
-<view class="page">
-  <swiper class="swiper" duration="{{swiper.duration}}" current="{{swiper.current}}" indicator-dots="true"
-   indicator-active-color="#fff" bindanimationfinish="animationfinish" autoplay="{{false}}">
-  	<block wx:for="{{3}}" wx:key="unique">
+<view class="page index">
+  <swiper class="swiper" duration="{{swiper.duration}}" current="{{swiper.current}}" indicator-dots="{{false}}"
+   indicator-active-color="#fff" bindchange="animationfinish" autoplay="{{false}}">
+  	<block wx:for="{{pageList}}" wx:key="unique">
   		<swiper-item class="swiper-item" id="{{index}}">
-  			{{index}}
+  			<block wx:if="{{item.components == 'me'}}">
+          <me></me>
+        </block>
+        <block wx:elif="{{item.components == 'list'}}">
+          <list></list>
+        </block>
+        <block wx:else>
+          <view style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+            {{item.title}}
+          </view>
+        </block>
   		</swiper-item>
   	</block>
   </swiper>
 </view>
-<navBar num="{{num}}" flag="{{flag}}"></navBar>
+<navBar num="{{num}}" swiper="{{true}}" bind:swiperCallback="swiperCallback" flag="{{flag}}"></navBar>
 <loading flag="{{flag}}"></loading>
