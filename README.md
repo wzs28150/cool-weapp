@@ -63,6 +63,31 @@
 ## 小程序登陆流程
 ![avatar](https://api.hrbkcwl.com/flow.jpg)
 
+## 项目目录
+
+``` bash
+.
++-- dist(编译后最终小程序文件所在目录)
+|   +-- wechat(编译后最终小程序文件)
++-- src(项目编辑目录)
+|   +-- api(接口目录)
+|   |   +-- config.js(接口设置)
+|   |   +-- common.js(公共接口)
+|   +-- components(组件目录)
+|   +-- images(图片目录)
+|   +-- pages(页面目录)	
+|   +-- styles(基础样式scss目录)	
+|   +-- utils(封装的一些函数目录)
+|   +-- wxs(wxs小程序脚本语言目录)
+|   +-- app.js(入口文件)
+|   +-- app.json(入口配置文件)
+|   +-- app.scss(一些公共样式文件)
+``` 
+## 维护日志及下载
+
+日期|更新内容|下载
+:---:|:---:|:---:
+2020.01.06|1. 优化api接口 所有接口在api文件夹下统一管理<br/>2. 优化tabbar页面为swiper切换 tabbar页面以组件形式引入<br/>3.解决tabbar页面数据更新问题|[V0.0.1 下载]( https://github.com/wzs28150/cool-weapp/archive/master.zip "cool-weapp"). 
 
 ## License
 
