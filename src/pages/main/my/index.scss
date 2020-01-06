@@ -10,6 +10,14 @@ $jin: #d6a869;
 	position: relative;
 	color: #fff;
 	padding: 40rpx 0 170rpx;
+	canvas{
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+	}
 	&:after {
 		content: '';
 		position: absolute;
@@ -20,7 +28,7 @@ $jin: #d6a869;
 		width: 200vw;
 		height: 200vw;
 		border-radius: 100%;
-		z-index: -1;
+		z-index: -2;
 	}
 	.loginPannel {
 		width: 100%;
@@ -49,6 +57,7 @@ $jin: #d6a869;
 				line-height: 1em;
 				padding: 8rpx 10rpx;
 				border-radius: 50px;
+				text-align: center;
 			}
 		}
 		.name {

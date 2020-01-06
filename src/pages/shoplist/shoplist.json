@@ -2,6 +2,7 @@
   "usingComponents": {
     "searchBar": "../../components/searchBar/searchBar",
     "mescroll": "../../components/mescroll/mescroll",
-    "shopItem": "../../components/shopItem/shopItem"
+    "shopItem": "../../components/shopItem/shopItem",
+    "page": "../../components/page/page"
   }
 }

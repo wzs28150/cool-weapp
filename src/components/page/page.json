@@ -1,0 +1,8 @@
+{
+	"component": true,
+  "usingComponents": {
+    "touch": "../touch/touch",
+    "hand": "../hand/hand"
+  }
+}
+

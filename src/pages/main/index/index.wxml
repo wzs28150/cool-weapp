@@ -21,5 +21,6 @@
   	</block>
   </swiper>
 </view>
+<hand wx:if="{{!isTipShow}}" bindclose="close" top="下拉刷新" bottom="上拉加载" left="侧滑切换" right="侧滑切换"></hand>
 <navBar num="{{num}}" swiper="{{true}}" bind:swiperCallback="swiperCallback" flag="{{flag}}"></navBar>
 <loading flag="{{flag}}"></loading>

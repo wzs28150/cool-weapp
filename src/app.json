@@ -1,7 +1,6 @@
 {
 	"pages": [
-		"pages/main/index",
-		"pages/me1/style1/index/index",
+		"pages/main/index/index",
 		"pages/shoplist/shoplist"
 	],
 	"window": {

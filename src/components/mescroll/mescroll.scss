@@ -29,13 +29,16 @@
 .inner-empty {
 	text-align: center;
 	color     : #999;
-	min-height: 100vh;
+	min-height: 100%;
 	overflow  : hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .inner-empty image {
 	width  : 30vw;
 	height : 30vw;
-	margin : 20vw auto 5vh;
+	// margin : 20vw auto 5vh;
 	display: block;
 }

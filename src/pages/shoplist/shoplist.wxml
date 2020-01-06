@@ -1,4 +1,4 @@
-<view class="page">
+<page class="page">
     <mescroll class="scroll" page="{{page}}" bindupper="upper" bindlower="lower" scroll-with-animation="{{true}}" upper-threshold="{{0}}" isLoadMoreLoading="{{isLoadMoreLoading}}"
      isRefreshLoading="{{isRefreshLoading}}" isEmpty="{{list.length}}" stylestr="{{stylestr}}">
     	<view class="container-without-overflow" slot="inner">
@@ -7,4 +7,4 @@
     		</view>
     	</view>
     </mescroll>
-</view>
+</page>

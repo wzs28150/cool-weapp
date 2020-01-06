@@ -1,0 +1,4 @@
+<touch class="page" bindmoveToLeft="moveToLeft" bindmoveToRight="moveToRight">
+	<slot></slot>
+</touch>
+<hand wx:if="{{!isInfoTipShow}}" bindclose="close" left="右滑返回"></hand>

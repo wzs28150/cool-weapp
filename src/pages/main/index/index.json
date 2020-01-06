@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navBar": "../../../components/navBar/navBar",
+    "loading": "../../../components/loading/loading",
+    "hand": "../../../components/hand/hand",
+    "index": "../home/index",
+    "list": "../list/index",
+    "me": "../my/index"
+  }
+}

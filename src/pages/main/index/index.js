@@ -8,10 +8,11 @@ Page({
 	data: {
 		swiper: {
 			duration: 1000,
-			current: 0
+			current: 2
 		},
-		num: 0,
+		num: 2,
 		flag: false,
+		isTipShow: false,
 		pageList: []
 	},
 	async onLoad () {
@@ -20,6 +21,11 @@ Page({
 	async onShow () {
 		await delay();
 		let that = this;
+		if (wx.getStorageSync('isTipShow')) {
+			this.setData({
+				isTipShow: true
+			})
+		}
 		setTimeout(function () {
 			that.setData({
 				flag: true,
@@ -48,7 +54,7 @@ Page({
 	},
 	page(id) {
 		let that = this
-		switch (id){
+		switch (id) {
 			case 0:
 				that.page0()
 				break;
@@ -89,7 +95,7 @@ Page({
 			me.init()
 		}
 	},
-	swiperCallback(e){
+	swiperCallback(e) {
 		console.log(e.detail.id)
 		let that = this
 		let swiper = that.data.swiper;
@@ -99,5 +105,11 @@ Page({
 			swiper: swiper
 		});
 		that.page(e.detail.id)
+	},
+	close: function () {
+		wx.setStorageSync('isTipShow', true);
+		this.setData({
+			isTipShow: true
+		})
 	}
 });

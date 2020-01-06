@@ -1,5 +1,5 @@
-<view class="page me">
 	<view class="me-pannel">
+    <canvas canvas-id='canvas'></canvas>
 		<loginPannel class="loginPannel" bind:getUserInfo="getUserInfo">
 			<view slot="nLogin">
 				<view class="container">
@@ -44,6 +44,3 @@
 			</block>
 		</view>
 	</view>
-</view>
-<navBar num="{{num}}" flag="{{flag}}"></navBar>
-<loading flag="{{flag}}"></loading>

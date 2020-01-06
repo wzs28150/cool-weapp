@@ -1,3 +1,10 @@
+/**
+ * globalData     obj	     公共数据
+ * userInfo	      obj      用户信息
+ * navbar         obj      底部菜单数据
+ * checkSession   function 检查是否登录
+ * initLoginState function 已授权自动登录
+ */
 import {
 	getNavList,
 	getMyInfo,
@@ -18,11 +25,9 @@ App({
 	},
 	globalData: {
 		userInfo: null,
-		navbar: [],
-		api: 'http://114.115.177.23:9090/mock/68/api',
-		appName: 'Cool小程序框架'
+		navbar: []
 	},
-	checkSession: function (url = "") {
+	checkSession: function () {
 		const that = this;
 		var promise = new Promise((resolve, reject) => {
 			wx.checkSession({
@@ -38,7 +43,6 @@ App({
 							resolve(userInfo);
 						})
 						.catch(err => {
-							// that.initLoginState();
 							reject(err);
 						});
 				},
@@ -55,16 +59,14 @@ App({
 			wx.login({
 				success: (result) => {
 					console.log(result);
-					// 调用获取用户信息接口
 					wx.getSetting({
 						success: (res) => {
-							console.log(
-								'是否授权',
-								res.authSetting['scope.userInfo'] !== undefined,
-							);
+							// console.log(
+							// 	'是否授权',
+							// 	res.authSetting['scope.userInfo'] !== undefined,
+							// );
 							if (res.authSetting['scope.userInfo'] !== undefined) {
-								console.log('已授权');
-								// 检查token 获取用户信息
+								// console.log('已授权');
 								wx.getUserInfo({
 									lang: 'zh_CN',
 									success: (e) => {
@@ -100,6 +102,5 @@ App({
 				}
 			})
 			.catch(() => {});
-
 	}
 });

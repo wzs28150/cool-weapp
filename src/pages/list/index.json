@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "searchBar": "../../components/searchBar/searchBar",
-    "mescroll": "../../components/mescroll/mescroll",
-    "newsPicItem": "../../components/newsPicItem/newsPicItem"
-  }
-}
