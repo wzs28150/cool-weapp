@@ -1,4 +1,7 @@
 import util from "../../utils/util";
+import {
+	getShopList
+} from "../../api/list.js";
 const app = getApp();
 Page({
 	data: {
@@ -25,46 +28,29 @@ Page({
 		// 获取经纬度
 		let position = app.globalData.position;
 		// console.log(that.data.category[that.data.current].catid)
-		util
-			.get(
-				app.globalData.api +
-				"/shoplist?page_id=" +
-				that.data.page
-			)
-			.then(response => {
-				let data = response.data;
-				if (data.statusCode == 1) {
-					wx.hideLoading();
-					let list = that.data.list;
-					if (that.data.page == 1) {
-						setTimeout(()=>{
-							that.setData({
-								list: data.list,
-								isRefreshLoading: false,
-								isLoadMoreLoading: false
-							});
-						},500)
-					} else {
+		getShopList({
+				page_id: that.data.page
+			}).then(res => {
+				wx.hideLoading();
+				let list = that.data.list;
+				if (that.data.page == 1) {
+					setTimeout(() => {
 						that.setData({
-							list: list.concat(data.list)
+							list: res.list,
+							isRefreshLoading: false,
+							isLoadMoreLoading: false
 						});
-						setTimeout(()=>{
-							that.setData({
-								isRefreshLoading: false,
-								isLoadMoreLoading: false
-							});
-						},500)
-					}
-				} else if (response.data.code == 402 || response.data.code == 401) {
-					wx.showToast({
-						title: "请求超时",
-						icon: "success",
-						duration: 2000
-					});
-					app.checkSession();
-					return false;
+					}, 500)
 				} else {
-					console.log(`数据请求失败`);
+					that.setData({
+						list: list.concat(res.list)
+					});
+					setTimeout(() => {
+						that.setData({
+							isRefreshLoading: false,
+							isLoadMoreLoading: false
+						});
+					}, 500)
 				}
 			})
 			.catch(err => {

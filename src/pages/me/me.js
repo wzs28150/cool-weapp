@@ -1,4 +1,3 @@
-// component/rating/index.js
 const app = getApp();
 Component({
 	/**

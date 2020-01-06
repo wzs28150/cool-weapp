@@ -1,5 +1,8 @@
-import util from 'utils/util.js';
-
+import {
+	getNavList,
+	getMyInfo,
+	dologin
+} from 'api/common.js'
 App({
 	onLaunch() {
 		let that = this;
@@ -28,21 +31,13 @@ App({
 				success: () => {
 					// session 未过期，并且在本生命周期一直有效
 					that.globalData.token = wx.getStorageSync("token");
-					util
-						.get(that.globalData.api + "/myInfo")
-						.then(response => {
-							let data = response.data;
-							if (data.statusCode == 1) {
-								let userInfo = data.user_info;
-								that.globalData.userInfo = userInfo;
-								if (this.userInfoReadyCallback) {
-									this.userInfoReadyCallback(userInfo)
-								}
-								resolve(data);
-							} else {
-								// that.initLoginState();
-								reject(data);
+					getMyInfo().then(res => {
+							let userInfo = res.user_info;
+							that.globalData.userInfo = userInfo;
+							if (this.userInfoReadyCallback) {
+								this.userInfoReadyCallback(userInfo)
 							}
+							resolve(data);
 						})
 						.catch(err => {
 							// that.initLoginState();
@@ -75,13 +70,11 @@ App({
 								wx.getUserInfo({
 									lang: 'zh_CN',
 									success: (e) => {
-										util
-											.login(that.globalData.api + '/login', {
+											dologin({
 												code: result.code,
 												nickname: e.userInfo.nickName,
 												avatarUrl: e.userInfo.avatarUrl,
-											})
-											.then((res) => {
+											}).then((res) => {
 												let data = res.data;
 												wx.setStorageSync('token', data.token);
 												resolve(data);
@@ -103,13 +96,10 @@ App({
 	},
 	getNav() {
 		let that = this
-		util
-			.get(that.globalData.api + '/index/navbar')
-			.then((res) => {
-				let data = res.data;
-				that.globalData.navbar = data.data
+		getNavList().then((res) => {
+				that.globalData.navbar = res.data
 				if (this.getNavReadyCallback) {
-					this.getNavReadyCallback(data.data);
+					this.getNavReadyCallback(res.data);
 				}
 			})
 			.catch(() => {});
