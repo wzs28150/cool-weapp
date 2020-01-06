@@ -1,6 +1,6 @@
 import {
 	getList
-} from "../../api/list.js";
+} from "@/api/list.js";
 const app = getApp();
 Component({
 	/**
@@ -28,7 +28,7 @@ Component({
 	 * 组件的方法列表
 	 */
 	methods: {
-		getDataByServer: function () {
+		init: function () {
 			let that = this;
 			// 获取经纬度
 			let position = app.globalData.position;
@@ -77,6 +77,6 @@ Component({
 	},
 	ready: function () {
 		let that = this;
-		that.getDataByServer();
+		that.init();
 	}
 });

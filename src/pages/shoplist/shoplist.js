@@ -1,7 +1,6 @@
-import util from "../../utils/util";
 import {
 	getShopList
-} from "../../api/list.js";
+} from "@/api/list.js";
 const app = getApp();
 Page({
 	data: {

@@ -1,17 +1,24 @@
-import { resolve } from 'path';
+import {
+	resolve
+} from 'path';
 import {
 	DefinePlugin,
 	EnvironmentPlugin,
 	IgnorePlugin,
 	optimize,
 } from 'webpack';
-import WXAppWebpackPlugin, { Targets } from 'wxapp-webpack-plugin';
+import WXAppWebpackPlugin, {
+	Targets
+} from 'wxapp-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import pkg from './package.json';
 
-const { NODE_ENV, LINT } = process.env;
+const {
+	NODE_ENV,
+	LINT
+} = process.env;
 const isDev = NODE_ENV !== 'production';
 const shouldLint = !!LINT && LINT !== 'false';
 const srcDir = resolve('src');
@@ -20,7 +27,10 @@ const copyPatterns = []
 	.concat(pkg.copyWebpack || [])
 	.map(
 		(pattern) =>
-			typeof pattern === 'string' ? { from: pattern, to: pattern } : pattern,
+		typeof pattern === 'string' ? {
+			from: pattern,
+			to: pattern
+		} : pattern,
 	);
 
 export default (env = {}) => {
@@ -52,8 +62,7 @@ export default (env = {}) => {
 		},
 		target: Targets[target],
 		module: {
-			rules: [
-				{
+			rules: [{
 					test: /\.js$/,
 					include: /src/,
 					exclude: /node_modules/,
@@ -121,11 +130,16 @@ export default (env = {}) => {
 			new IgnorePlugin(/vertx/),
 			shouldLint && new StylelintPlugin(),
 			min && new MinifyPlugin(),
-			new CopyPlugin(copyPatterns, { context: srcDir }),
+			new CopyPlugin(copyPatterns, {
+				context: srcDir
+			}),
 		].filter(Boolean),
 		devtool: isDev ? 'source-map' : false,
 		resolve: {
 			modules: [resolve(__dirname, 'src'), 'node_modules'],
+			alias: {
+				'@': resolve('src')
+			}
 		},
 		watchOptions: {
 			ignored: /dist|manifest/,

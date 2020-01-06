@@ -1,0 +1,32 @@
+<view class="me-pannel">
+		<loginPannel class="loginPannel" bind:getUserInfo="getUserInfo">
+			<view slot="nLogin">
+				<view class="container">
+					<view class="nLogin">
+						<view class="photo">
+							<image class="pic" mode="widthFix" src="/images/timg.jpg"></image>
+							<!-- <view class="type"></view> -->
+						</view>
+						<view class="name">请登录</view>
+					</view>
+				</view>
+			</view>
+			<view slot="Login">
+				<view class="container">
+					<view class="nLogin">
+						<view class="photo">
+							<image class="pic" mode="aspectFill" src="{{userInfo.avatarurl}}"></image>
+							<view class="type">{{userInfo.is_seller == 0?'用户':'商家'}}</view>
+						</view>
+						<view class="inner">
+							<view class="name">{{userInfo.nickname}}</view>
+							<view class="num" wx:if="{{userInfo.is_seller != 0}}">
+								<view class="balance">余额: {{userInfo.seller_amount}}</view>
+								<view class="hits">浏览量:{{userInfo.look_num}}</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</loginPannel>
+	</view>

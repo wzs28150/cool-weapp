@@ -48,10 +48,8 @@ Component({
 			}, 500)
 		},
 		getUserInfo(e) {
-			console.log(e)
 			let that = this
 			app.checkSession().then(function (res) {
-				console.log(res)
 				that.setData({
 					userInfo: res
 				});

@@ -21,14 +21,28 @@ const post = (url, data) => {
 			success: function (res) {
 				// 服务器返回数据
 				if (res.statusCode == 200) {
-					resolve(res);
+					let resData = res.data;
+					if (resData.statusCode == 1) {
+						resolve(resData);
+					} else {
+						wx.showToast({
+						  title: resData.msg,
+						  icon: 'none',
+						  duration: 2000
+						})
+					}
 				} else {
 					// 返回错误提示信息
-					reject(res.data);
+					wx.showToast({
+					  title: '请求错误请重试!',
+					  icon: 'none',
+					  duration: 2000
+					})
+					reject('请求错误请重试!');
 				}
 			},
 			error: function (e) {
-				reject('网络出错');
+				reject('网络出错!');
 			},
 		});
 	});
@@ -55,6 +69,7 @@ const get = (url, data) => {
 						  icon: 'none',
 						  duration: 2000
 						})
+						reject('请求错误请重试!');
 					}
 				} else {
 					wx.showToast({
@@ -85,7 +100,18 @@ const login = (url, data) => {
 			},
 			success: function (res) {
 				if (res.statusCode == 200) {
-					resolve(res);
+					let resData = res.data;
+					if (resData.statusCode == 1) {
+						console.log(resData)
+						resolve(resData);
+					} else {
+						wx.showToast({
+						  title: resData.msg,
+						  icon: 'none',
+						  duration: 2000
+						})
+						reject('请求错误请重试!');
+					}
 				} else {
 					// 返回错误提示信息
 					reject(res.data);

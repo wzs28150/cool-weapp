@@ -2,17 +2,15 @@ import {
 	flow
 } from 'lodash';
 const delay = (t = 0) => new Promise((resolve) => setTimeout(resolve, t));
-
-// 获取应用实例
-const app = getApp(); //  eslint-disable-line no-undef
+const app = getApp();
 
 Page({
 	data: {
 		swiper: {
 			duration: 1000,
-			current: 1
+			current: 0
 		},
-		num: 1,
+		num: 0,
 		flag: false,
 		pageList: []
 	},
@@ -67,24 +65,29 @@ Page({
 	},
 	page0() {
 		let that = this
-		console.log(that.data.pageList[0].title)
 		wx.setNavigationBarTitle({
 			title: that.data.pageList[0].title
 		})
+		let index = that.selectComponent('#index');
+		index.init()
 	},
 	page1() {
 		let that = this
-		console.log(that.data.pageList[1].title)
 		wx.setNavigationBarTitle({
 			title: that.data.pageList[1].title
 		})
+		let list = that.selectComponent('#list');
+		list.init()
 	},
 	page2() {
 		let that = this
-		console.log(that.data.pageList[2].title)
 		wx.setNavigationBarTitle({
 			title: that.data.pageList[2].title
 		})
+		let me = that.selectComponent('#me');
+		if (wx.getStorageSync("token")) {
+			me.init()
+		}
 	},
 	swiperCallback(e){
 		console.log(e.detail.id)

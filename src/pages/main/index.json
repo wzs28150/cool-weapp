@@ -3,6 +3,7 @@
     "navBar": "../../components/navBar/navBar",
     "loading": "../../components/loading/loading",
     "me": "../me/me",
-    "list": "../list/index"
+    "list": "../list/index",
+    "index": "../index/index"
   }
 }

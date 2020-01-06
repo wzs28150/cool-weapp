@@ -14,8 +14,8 @@ export const dologin = ({
 	avatarUrl
 }) => {
 	return api.login('/login', {
-		code: result.code,
-		nickname: e.userInfo.nickName,
-		avatarUrl: e.userInfo.avatarUrl,
+		code: code,
+		nickname: nickname,
+		avatarUrl: avatarUrl,
 	});
 };

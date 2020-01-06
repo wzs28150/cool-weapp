@@ -2,21 +2,19 @@ import {
 	getNavList,
 	getMyInfo,
 	dologin
-} from 'api/common.js'
+} from '@/api/common.js'
 App({
 	onLaunch() {
 		let that = this;
 		if (wx.getStorageSync("token")) {
-			this
+			that
 				.checkSession()
 				.then(function (res) {})
 				.catch(function (err) {
-					console.log(err)
 					that.initLoginState();
 				});
 		}
-		this.getNav()
-
+		that.getNav()
 	},
 	globalData: {
 		userInfo: null,
@@ -37,7 +35,7 @@ App({
 							if (this.userInfoReadyCallback) {
 								this.userInfoReadyCallback(userInfo)
 							}
-							resolve(data);
+							resolve(userInfo);
 						})
 						.catch(err => {
 							// that.initLoginState();
@@ -74,10 +72,9 @@ App({
 												code: result.code,
 												nickname: e.userInfo.nickName,
 												avatarUrl: e.userInfo.avatarUrl,
-											}).then((res) => {
-												let data = res.data;
-												wx.setStorageSync('token', data.token);
-												resolve(data);
+											}).then((resu) => {
+												wx.setStorageSync('token', resu.data.token);
+												resolve(resu);
 											})
 											.catch((err) => {
 												reject(err);
