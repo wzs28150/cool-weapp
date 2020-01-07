@@ -17,6 +17,26 @@ Page({
 	},
 	async onLoad () {
 		await delay();
+		this.position = {
+			x: 150,
+			y: 150,
+			vx: 2,
+			vy: 2
+		}
+		this.x = -100
+
+		// 通过 SelectorQuery 获取 Canvas 节点
+		let query = wx.createSelectorQuery().in(this)
+			.select('#canvas')
+			.fields({
+				node: true,
+				size: true,
+			})
+			console.log(query)
+
+	},
+	init(res){
+		console.log(res)
 	},
 	async onShow () {
 		await delay();

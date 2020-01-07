@@ -1,5 +1,5 @@
 	<view class="me-pannel">
-    <canvas canvas-id='canvas'></canvas>
+    <canvas type="2d" canvas-id='canvas'></canvas>
 		<loginPannel class="loginPannel" bind:getUserInfo="getUserInfo">
 			<view slot="nLogin">
 				<view class="container">

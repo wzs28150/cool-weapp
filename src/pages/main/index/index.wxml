@@ -1,4 +1,5 @@
 <view class="page index">
+  <!-- <canvas type="2d" canvas-id='canvas'></canvas> -->
   <swiper class="swiper" duration="{{swiper.duration}}" current="{{swiper.current}}" indicator-dots="{{false}}"
    indicator-active-color="#fff" bindchange="animationfinish" autoplay="{{false}}">
   	<block wx:for="{{pageList}}" wx:key="unique">

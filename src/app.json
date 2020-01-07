@@ -1,7 +1,8 @@
 {
 	"pages": [
 		"pages/main/index/index",
-		"pages/shoplist/shoplist"
+		"pages/shoplist/shoplist",
+		"pages/ceshi/ceshi"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

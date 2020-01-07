@@ -24,7 +24,13 @@ Component({
 		radius: 60,
 		width: 0,
 		height: 0,
-		context: null
+		context: null,
+		// 开始角度
+		startAngle: -(1 / 2 * Math.PI),
+		// 结束角度
+		endAngle: 3 / 2 * Math.PI,
+		// 偏移角度
+		xAngle: Math.PI / 180
 	},
 
 	/**
@@ -63,58 +69,30 @@ Component({
 				console.log(err)
 			})
 		},
-		canvasLoad() {
-			var canvas = {
-				width: 300,
-				height: 300,
-			};
-			var boHeight = canvas.height / 10;
-			var posHeight = canvas.height / 1.2;
-			//初始角度为0
-			var step = 0;
-			//定义三条不同波浪的颜色
-			var lines = ["rgba(255,255,255, 0.2)",
-				"rgba(255,255,255, 0.2)",
-				"rgba(255,255,255, 0.2)"
-			];
-			var context = wx.createContext();
-			let requestAnimFrame = (function () {
-				return function (callback) {
-					setTimeout(callback, 1000 / 60);
-				};
-			})();
-
-			function loop () {
-				context.clearRect(0, 0, canvas.width, canvas.height);
-				step++;
-				//画3个不同颜色的矩形
-				for (var j = lines.length - 1; j >= 0; j--) {
-					context.fillStyle = lines[j];
-					//每个矩形的角度都不同，每个之间相差45度
-					var angle = (step + j * 50) * Math.PI / 180;
-					var deltaHeight = Math.sin(angle) * boHeight;
-					var deltaHeightRight = Math.cos(angle) * boHeight;
-					context.beginPath();
-					context.moveTo(0, posHeight + deltaHeight);
-					context.bezierCurveTo(canvas.width / 2, posHeight + deltaHeight - boHeight, canvas.width / 2, posHeight +
-						deltaHeightRight - boHeight, canvas.width, posHeight + deltaHeightRight);
-					context.lineTo(canvas.width, canvas.height);
-					context.lineTo(0, canvas.height);
-					context.lineTo(0, posHeight + deltaHeight);
-					context.closePath();
-					context.fill();
-				}
-				wx.drawCanvas({
-					canvasId: 'canvas',
-					actions: context.getActions()
-				})
-
-				requestAnimFrame(loop);
-			}
-			loop();
+		canvasLoad(res) {
+			let that = this;
+			console.log(res)
+			const ctx = wx.createCanvasContext('canvas', this);
+			// Draw coordinates
+			ctx.arc(that.getRandomNum(), that.getRandomNum(), 60, 0, 2 * Math.PI)
+			ctx.setFillStyle('rgba(255,255,255,0.2)')
+			ctx.fill()
+			ctx.arc(that.getRandomNum(), that.getRandomNum(), 60, 0, 2 * Math.PI)
+			ctx.setFillStyle('rgba(255,255,255,0.2)')
+			ctx.fill()
+			ctx.arc(that.getRandomNum(), that.getRandomNum(), 60, 0, 2 * Math.PI)
+			ctx.setFillStyle('rgba(255,255,255,0.2)')
+			ctx.fill()
+			ctx.draw()
 		},
 		getRandomNum() {
 			return Math.random() * (this.data.width - this.data.radius * 2) + this.data.radius;
+			const ctx = wx.createCanvasContext('canvas', this);
+			// Draw coordinates
+			ctx.arc(100, 75, 50, 0, 2 * Math.PI)
+			ctx.setFillStyle('rgba(255,255,255,0.2)')
+			ctx.fill()
+			ctx.draw()
 		},
 		clearCanvas() {
 			if (this.data.context) {
@@ -122,6 +100,7 @@ Component({
 			}
 		}
 	},
+
 	ready: function () {
 		let that = this;
 		wx.getSystemInfo({
@@ -132,8 +111,18 @@ Component({
 				});
 			}
 		})
-		that.canvasLoad()
-
+		// wx.createSelectorQuery().in(this)
+		// 	.select('#canvas')
+		// 	.fields({
+		// 		node: true,
+		// 	})
+		// 	.exec(this.canvasLoad.bind(this))
+		const query = wx.createSelectorQuery().in(this)
+		setTimeout(function () {
+			query.select('#canvas').boundingClientRect(function (res) {
+				console.log(res)
+			}).exec()
+		}, 1000)
 		if (wx.getStorageSync("token")) {
 			that.init();
 		}
